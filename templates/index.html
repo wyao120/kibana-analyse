@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<form action="" method="post" style="float: left">
+    最大数量 <input type="number" max="10000" name="size"> <br>
+    搜索表达式 <br>
+    <textarea name="request" id="request" cols="100" rows="50"></textarea> <br>
+    提交 <input type="submit">
+</form>
+
+<div style="float: right; width: 50%">
+    符合条件的日志数量：{{ size }}
+    <br>
+    {% if res %}
+        {% for item in res %}
+            {{ item[0] }} : {{ item[1] }} <br>
+        {% endfor %}
+    {% endif %}
+</div>
+</body>
+</html>
